@@ -1,0 +1,145 @@
+# Group テンプレート
+
+## GET,POST基本情報 [/temp]
+
+### 取得 [GET]
+
+temp取得
+
++ Request
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+    * Body
+
+            {
+                "about": "comment",
+                "avatar_url": "https://https://lh3.googleusercontent.com/xxxx~",
+                "average_point": 0,
+                "boat": "fish号",
+                "cannot_leave_reason": "",
+                "company": "",
+                "company_address": "",
+                "display_name": "fish太郎",
+                "id": 123,
+                "identity_verified": true,
+                "is_bid_popup": true,
+                "is_company": false,
+                "is_customer": true,
+                "is_email_refused": false,
+                "is_seller": true,
+                "last_login_at": "2021-01-01T00:00:09+09:00",
+                "prefecture": 34,
+                "shipping_provider": 0,
+                "total_evaluation_count": 0,
+                "total_point": 0
+            }
+
+### 登録 [POST]
+
+temp登録
+
++ Request
+    * Body
+
+            {
+                "avatar_url": "https://fishsale.jp/assets/noimage_normal.png",
+                "display_name": "テストuser",
+                "email": "sample@sample.com",
+                "prefecture": 1
+            }
+
++ Response 200 (application/json)
+    * Body
+
+            {
+                "about": "",
+                "avatar_url": "https://fishsale.jp/assets/noimage_normal.png",
+                "average_point": 0,
+                "boat": "",
+                "cannot_leave_reason": "",
+                "company": "",
+                "company_address": "",
+                "display_name": "テストuser",
+                "id": 123,
+                "identity_verified": false,
+                "is_bid_popup": false,
+                "is_company": false,
+                "is_customer": false,
+                "is_email_refused": false,
+                "is_seller": false,
+                "last_login_at": "2000-01-01T00:00:00.513861+09:00",
+                "prefecture": 1,
+                "shipping_provider": 0,
+                "total_evaluation_count": 0,
+                "total_point": 0
+            }
+
+
+## PUT,DELETE基本情報 [/temp/{id}]
+
++ Parameters
+    + id : 123(バリデーション) - 説明
+
+### 更新 [PUT]
+
+temp更新
+
++ Request
+    + Headers
+
+            Authorization: Bearer {token}
+
+    * Body
+
+            {
+                ”about”: "魚釣り大好きです。",
+                ”avatar_url”: "https://lh3.googleusercontent.com/a-/XXXXX",,
+                ”boat”: "うお丸",
+                ”company”: "魚カンパニー",
+                ”company_address”: "大阪府大阪市",
+                ”display_name”: "フィッシュ太郎",
+                ”is_bid_popup”: true,
+                ”is_company”: true,
+                ”prefecture”: 1,
+                ”shipping_Provider”: 1
+            }
+
+
++ Response 200 (application/json)
+    * Body
+
+            {
+                "about": "魚釣り大好きです。",
+                "avatar_url": "https://lh3.googleusercontent.com/a-/XXXXX",
+                "average_point": 0,
+                "boat": "うお丸",
+                "cannot_leave_reason": "",
+                "company": "魚カンパニー",
+                "company_address": "大阪府大阪市",
+                "display_name": "フィッシュ太郎",
+                "id": 123,
+                "identity_verified": true,
+                "is_bid_popup": true,
+                "is_company": true,
+                "is_customer": true,
+                "is_email_refused": false,
+                "is_seller": true,
+                "last_login_at": "2000-01-01T00:00:00+09:00",
+                "prefecture": 1,
+                "shipping_provider": 1,
+                "total_evaluation_count": 0,
+                "total_point": 0
+            }
+
+### 削除 [DELETE]
+
+temp削除
+
++ Request
+    + Headers
+
+            Authorization: Bearer <token>
++ Response 204
